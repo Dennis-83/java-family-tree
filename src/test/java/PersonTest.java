@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
+
 
 public class PersonTest {
 
@@ -41,6 +40,18 @@ public class PersonTest {
         assertThat(batman.getPets()).contains(cat);
         assertThat(batman.getPets().get(0).getName()).isEqualTo("Selina");
     }
+
+    @Test
+    void addAPetWithAnOwner() {
+        //Given
+        Person batman = new Person("Bruce", "Wayne", 22, "male");
+        Pet cat = new Pet("Selina", "cat", 9);
+        //When
+        batman.addPetWithOwner(cat, batman);
+        //Then
+        assertThat(batman.getPets().get(0).getOwner().getName()).isEqualTo("Bruce");
+    }
+
 
     @Test
     void addSibling() {
@@ -117,5 +128,4 @@ public class PersonTest {
         //Then
         assertThat(batman.getPartner().getName()).isEqualTo("Talia");
     }
-
 }

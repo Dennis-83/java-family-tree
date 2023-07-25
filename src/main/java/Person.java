@@ -16,7 +16,7 @@ public class Person {
 
     private Person partner;
 
-    private boolean isDeceased = false;
+    private boolean isDeceased = false;   //added this boolean to 'finish off' the family tree ;-)
 
 
     public Person(String name, String middleName, String lastName, String sex, int age) {
@@ -127,6 +127,13 @@ public class Person {
     public void addPet(Pet pet) {
         pets.add(pet);
     }
+
+    //method to immediately set the owner as well
+    public void addPetWithOwner(Pet pet, Person owner) {
+        pet.setOwner(owner);
+        pets.add(pet);
+    }
+
 
     public void addSibling(Person sibling) {
         siblings.add(sibling);

@@ -12,6 +12,15 @@ public class Pet {
         this.age = age;
     }
 
+    //Trying a constructor to immediately set the owner
+//    public Pet(String name, String species, int age, Person owner) {
+//        this.name = name;
+//        this.species = species;
+//        this.age = age;
+//        this.owner = owner;
+//    }
+
+
     public String getName() {
         return name;
     }
